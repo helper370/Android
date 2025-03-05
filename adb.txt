@@ -1,0 +1,30 @@
+database:
+        -use App inspector
+
+shared_pref:
+        -go to /data/data/app_name in device explorer
+
+external file:
+        -go to /storage in device explorer
+
+strings:
+        -use jadx, go to Resources/resource.arsc/res/values
+
+logging:
+        -logcat
+
+sd-card:
+        -allow permissions
+        - go too /sdcard in device explorer
+
+SQLI : ' OR '1'='1' -- (most common way)
+
+ADB use case:
+        -start an exported activity:
+                 adb shell am start -n activity_name (example: app.beetlebug/.ctf.b33tleAdministrator) 
+        -start an exported service:
+                adb shell am startservice -n service_name (example: app.beetlebug/.handlers.VulnerableService)
+        -access a content provider:
+                 adb shell content query --uri query_content (example: content://app.beetlebug.provider/users)
+
+        
