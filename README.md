@@ -29,6 +29,7 @@ https://medium.com/@68abdelrahmanmohamed/beetlebug-android-ctf-walk-through-19a1
 (ii) part 2: https://medium.com/@sudobro/diva-android-app-walkthrough-part-2-fbb50473cfb2
 
 
+------------------------------------------------------
 
 Commands:
 
