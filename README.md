@@ -143,3 +143,26 @@ Commands:
             });
         };
     });
+
+---apktool key gen and re sign---
+
+        # Decompile the app
+        apktool d three.apk --no-res
+        
+        # Re-compile the app
+        # three is the base folder of the decompiled app
+        
+        apktool b three
+        
+        # Change directory to the newly generated APK
+        cd three/dist
+        
+        # Generate a new key to sign the build
+        keytool -genkeypair -v -keystore key.keystore -alias publishingdoc -keyalg RSA -keysize 2048 -validity 10000
+        
+        # Sign the new build
+        jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ./key.keystore three.apk publishingdoc
+        
+        # Uninstall previous version of the app and install the new one
+        adb uninstall com.hellocmu.picoctf 
+        adb install three.apk
